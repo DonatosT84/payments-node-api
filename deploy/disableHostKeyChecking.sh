@@ -7,9 +7,9 @@
 # note ">>". It creates a file if it does not exits.
 # The file content we want is below
 #
-Host *
-  StrictHostKeyChecking no
-  
+# Host *
+#   StrictHostKeyChecking no
+#
 
 # any future command that fails will exit the script
 set -e
