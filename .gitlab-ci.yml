@@ -6,7 +6,7 @@ before_script:
   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
   - npm install
   - echo "${PRIVATE_KEY}"
-  - ssh-keygen -t rsa -C "d.tassis@hotmail.com" ~/.ssh/id_rsa
+  - ssh-keygen -t rsa -C "d.tassis@hotmail.com" -f ~/.ssh/id_rsa
   - cat ~/.ssh/id_rsa
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
