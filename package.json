@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "lint": "./gitlab-ci.yml"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",

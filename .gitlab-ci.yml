@@ -3,6 +3,7 @@ image: node:10.23.0
 
 #This command is run before all the jobs
 before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
   - npm install
 
 stages:
@@ -16,8 +17,16 @@ lint:
   stage: test
   script:
     - npm run lint
+
 # Job 2:
 #test:
 #  stage: test
 #  script:
 #    - npm run test
+
+deployToAWS:
+  only:
+    - master
+  stage: deploy
+  script:
+    - bash deploy/deploy.sh
