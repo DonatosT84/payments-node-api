@@ -39,7 +39,7 @@ async function createApp(config){
   graphQL(app)
 
   // adding swagger
-  app.use('/', swaggerUI.serve, swaggerUI.setup( swaggerJsDoc(swaggerOptions)));
+  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup( swaggerJsDoc(swaggerOptions)));
 
   return app
 }
