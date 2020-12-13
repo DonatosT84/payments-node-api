@@ -1,3 +1,4 @@
+const { request } = require('express');
 const Payment = require('../models/payment');
 
 // Create and Save a new Payment
@@ -61,6 +62,14 @@ exports.findOne = (req, res) => {
       });
   });
 };
+
+exports.findByCustomerId = async (req, res) => {
+  const paymentList = await Payment.find({
+    customer : req.params.customerId
+  }).exec();
+
+  res.json(paymentList);
+}
 
 // Update a payment identified by the id in the request
 exports.update = (req, res) => {

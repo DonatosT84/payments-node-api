@@ -76,6 +76,32 @@ module.exports = (app) => {
    */
   app.get('/payments/:id', payments.findOne);
 
+
+  /**
+   * Retrieve a list of Payments with the specified customerId
+   *
+   * @swagger
+   * /payments/list/{customerId}:
+   *  get:
+   *    description: Use to retrieve a list of payments by customer id
+   *    tags:
+   *      - payments
+   *    parameters:
+   *      - in: path
+   *        name: customerId
+   *        type: string
+   *        required: true
+   *        description: ID of the customer to get a list of payments.
+   *    responses:
+   *      '200':
+   *        description: A successful response with the updated payment
+   *      '404':
+   *        description: Customer ID not found
+   *      '500':
+   *        description: Server error
+   */
+  app.get('/payments/list/:customerId', payments.findByCustomerId);
+
   /**
    * Update a Payment with id
    *
