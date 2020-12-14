@@ -4,11 +4,11 @@
 set -e
 # Lets write the public key of our aws instance
 eval $(ssh-agent -s)
-mkdir -p /root/.ssh
-chmod 700 /root/.ssh
-cp $PRIVATE_KEY /root/.ssh/id_rsa
-chmod 600 /root/.ssh/id_rsa
-ssh-add /root/.ssh/id_rsa
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+cp $PRIVATE_KEY ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
+ssh-add ~/.ssh/id_rsa
 # echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
 
 # ** Alternative approach
