@@ -15,4 +15,5 @@
 set -e
 mkdir -p ~/.ssh
 touch ~/.ssh/config
+chmod a+x ~/.ssh/config
 echo -e "Host *\n\tStrictHostKeyChecking no\n\n" >> ~/.ssh/config
