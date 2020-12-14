@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # any future command that fails will exit the script
-set -e
+### set -e
 # Lets write the public key of our aws instance
-eval $(ssh-agent -s)
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-cp $PRIVATE_KEY ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa
+# eval $(ssh-agent -s)
+### mkdir -p ~/.ssh
+### chmod 700 ~/.ssh
+### cp $PRIVATE_KEY ~/.ssh/id_rsa
+### chmod 600 ~/.ssh/id_rsa
+### ssh-add ~/.ssh/id_rsa
 # echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
 
 # ** Alternative approach
